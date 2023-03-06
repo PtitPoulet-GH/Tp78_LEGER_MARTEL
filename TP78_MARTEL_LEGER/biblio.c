@@ -141,15 +141,16 @@ int emprunterLivre(T_Bibliotheque* ptrB, T_Code code)
 {
     char jour[13],mois[13];
     int i;
-    if (ptrB->nbLivres <= 0) {
+    if (ptrB->nbLivres <= 0) 
         return 0;
-    }
+    
 
     printf("Entrez le code du livre à emprunter : ");
     lireChaine("\nCOTE :", code, MAX);
 
     for (i = 0; i < ptrB->nbLivres; i++) {
-        if (strcmp(ptrB->etagere[i].code, code) == 0 && ptrB->etagere[i].emprunteur.lannee == 0) {
+        if (strcmp(ptrB->etagere[i].code, code) == 0 && ptrB->etagere[i].emprunteur.lannee == 0) 
+	{
             lireChaine("Entrez le nom de l'emprunteur : ", ptrB->etagere[i].emprunteur.nomemprunteur, 50);
             lireDateSysteme(&ptrB->etagere[i].emprunteur);
 	    printf("\n  emprunt realise le : ");
