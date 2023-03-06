@@ -148,7 +148,8 @@ int emprunterLivre(T_Bibliotheque* ptrB, T_Code code)
     printf("Entrez le code du livre à emprunter : ");
     lireChaine("\nCOTE :", code, MAX);
 
-    for (i = 0; i < ptrB->nbLivres; i++) {
+    for (i = 0; i < ptrB->nbLivres; i++) 
+    {
         if (strcmp(ptrB->etagere[i].code, code) == 0 && ptrB->etagere[i].emprunteur.lannee == 0) 
 	{
             lireChaine("Entrez le nom de l'emprunteur : ", ptrB->etagere[i].emprunteur.nomemprunteur, 50);
